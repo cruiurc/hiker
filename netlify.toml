@@ -1,9 +1,10 @@
-[build]
-  publish = "public"
-  command = "hugo --gc --themesDir"
+# [build]
+#   publish = "public"
+#   command = "hugo --gc --themesDir"
+# 
+# [build.environment]
+#   HUGO_VERSION = "0.95.0"
+#   HUGO_THEME = "repo"
+#   HUGO_BASEURL = "/"
 
-[build.environment]
-  HUGO_VERSION = "0.95.0"
-  HUGO_THEME = "repo"
-  HUGO_BASEURL = "/"
-
+[build]publish = "public"command = "env TZ='Asia/Shanghai' hugo --gc --minify --enableGitInfo"[context.production.environment]  HUGO_VERSION = "0.95.0"  HUGO_ENV = "production"  HUGO_ENABLEGITINFO = "true"[context.deploy-preview]command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"[context.deploy-preview.environment]  HUGO_VERSION = "0.69.2"  HUGO_ENV = "production"  HUGO_ENABLEGITINFO = "true"
